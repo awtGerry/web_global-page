@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/style.css"/>
+
+  <title>Todo perros - Productos</title>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="flex flex-juscont-space flex-al-items">
+
+      <!-- logo -->
+      <a href="/user" class="header__logo"><img src="../../images/jack.png"></a>
+
+      <!-- menu -->
+      <div class="header__menu">
+        <a href="/user">Inicio</a>
+        <a href="#">Productos</a>
+      </div>
+
+      <!-- log in & sign in -->
+      <div class="header__log-sign">
+        <a id="cart" class="button button__cart"><i class="uil uil-shopping-cart"></i></a>
+        <a href="/val/logout" class="button">Cerrar sesion</a>
+      </div>
+    </nav>
+  </header>
+  <div class="shopping shopping__display">
+    <!-- CARRITO -->
+    <div class="cart__container">
+      <div class="shopping-cart">
+        <div class="shopping-cart-header">
+          <i class="uil uil-shopping-cart"></i>
+
+          <span class="total-count contador">0</span>
+          <div class="shopping-cart-total">
+            <span>Total: $</span>
+            <span class="total-cart price-color">0</span>
+          </div>
+
+        </div> <!-- shopping-cart-header -->
+
+        <ul class="shopping-cart-items">
+           <li class="clearfix">
+          <img src='' id/>
+          <span class="item-name">' + cartArray[i].name + '</span>'
+          <span class="item-price">$ ' + cartArray[i].price + '</span>'
+          </li>'
+        </ul>
+
+        <!-- <a class="button">Pedir ahora</a> -->
+        <div class="button__shopping">
+            <a class="emptyCart button__shopping-btnClean"> <i class="uil uil-trash-alt" alt=""></i> Vaciar carrito</a>
+            <a href="/buy" form class="button button__shopping-btnBuy">Comprar ahora</a>
+        </div>
+
+      </div> <!-- shopping-cart -->
+    </div> <!-- cart__container -->
+
+    <div class="show-products">
+      <!-- PRODUCTOS -->
+      <!-- ` + container + ` -->
+    </div>
+  </div> <!-- shopping -->
+
+</body>
+<script src="styles/js/shopping.js"></script>
+</html>

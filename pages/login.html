@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>ToDo perros - Inciar sesion</title>
+
+  <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+
+  <!-- Back home -->
+  <center>
+    <a href="/" class="logo"><img src="images/jack.png"></a>
+  </center>
+
+  <!-- Creacion del contenedor -->
+  <center>
+    <div class="container container-f">
+      <form action="/val/login" method="POST" id="login">
+        <span class="container-title">INICIAR SESION</span>
+        <div class="input-ep">
+          <input type="email" placeholder="Introduzca su correo electrónico" required="" id="v_email" name="v_email">
+          <i class="uil uil-envelope-alt"></i>
+        </div>
+        <div class="input-ep">
+          <input type="password" placeholder="Introduzca su contraseña" required="" id="v_password" name="v_password">
+          <i class="uil uil-padlock"></i>
+        </div>
+
+        <!-- Boton para continuar -->
+        <div class="input-ep">
+          <input type="submit" class="button button__form" value="Continuar" id="send_msg">
+        </div>
+      </form>
+
+      <!-- Ir a pagina de registro -->
+      <div class="to-signup">
+        <span class="to-signup-text">
+          ¿No tiene cuenta?
+          <a href="/signup">Cree una.</a>
+        </span>
+      </div>
+
+    </div> <!--container -->
+  </center>
+
+  <div class="notification" id="notification">
+    <img src="./images/info-circle.svg">
+    Correo o contraseña incorrectos
+  </div>
+
+</body>
+<script src="styles/js/notification.js"></script>
+</html>

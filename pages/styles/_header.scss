@@ -1,0 +1,57 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $white_grayer;
+  z-index: 999;
+  nav {
+    padding: 18px;
+  }
+
+  &__logo {
+    img {
+      width: 2.875rem;
+      height: 2.375rem;
+      &:hover {
+        transition: color 250ms ease-in-out;
+        filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(148deg) brightness(90%) contrast(68%);
+      }
+    }
+  }
+
+  &__menu {
+    a {
+      font-size: $font-peq;
+      color: $dark_gray;
+      transition: color 150ms ease-in-out;
+      &:not(:last-child) {
+        margin-right: 24px;
+      }
+      &:hover {
+        color: $cyan;
+      }
+    }
+  }
+
+  &__log-sign {
+    a {
+      font-size: $font-peq;
+      color: $dark_gray;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+        transition: color 150ms ease-in-out;
+        &:hover {
+          color: $cyan;
+        }
+      }
+
+      &:is(:last-child) {
+        transition: opacity 300ms ease-in-out;
+        &:hover {
+          opacity: 0.65;
+        }
+      }
+    }
+  }
+}

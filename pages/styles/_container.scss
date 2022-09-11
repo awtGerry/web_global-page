@@ -1,0 +1,68 @@
+// Ventana de inicio de sesion
+.container {
+  display:block;
+  position: relative;
+  margin-top: 80px;
+  max-width: 600px;
+  width: 100%;
+  font-size: $font-gra;
+  box-shadow: 0 3px 6px #505050;
+
+  a {
+    color: $dark_blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-f {
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  &-title {
+    position: relative;
+    color: $ocean_blue;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .input-ep {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+
+    input {
+      height: 100%;
+      width: 85%;
+      padding: 0 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      border-bottom: 2px solid #707575;
+      border-top: 2px solid transparent;
+
+      &:is(:focus) ~ i{
+        transition: color 250ms ease-in-out;
+        color: $light_blue;
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      color: $dark_gray;
+    }
+
+  }//.input-ep
+
+  .to-signup {
+    &-text {
+      font-size: $font-peq;
+    }
+  }
+
+} // container

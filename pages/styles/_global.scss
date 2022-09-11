@@ -1,0 +1,233 @@
+*,*:before,*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $dark_gray;
+  background: $white;
+  font-size: $font-med;
+  font-family: $main-font;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: $font-large;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: $dark_blue;
+}
+
+h2 {
+  font-size: $font-gra;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: $dark_blue;
+}
+
+h3 {
+  font-weight: 300;
+  line-height: 1.15;
+  color: $dark_blue;
+  margin-top: 0px;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+  .about-p {
+    font-size: $font-peq;
+  }
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+.hero{
+  height: 100%;
+  background: url('../../images/collie_playing.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__admin {
+    height: 100%;
+    background: url('../../images/pedri.jpg');
+    background-size: cover;
+    background-position: center;
+    h1 {
+      color: $light_blue;
+      font-size: 2.5em;
+      text-shadow: 0px 2px 3px #2d2d2d;
+    }
+  }
+
+  &__content{
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+
+    &__header {
+      position: absolute;
+      top: 55%;
+      width: 100%;
+      -webkit-transform: translate(0%, -50%);
+      transform: translate(0%, -50%);
+      text-align: center;
+
+      h1 {
+        color: $white;
+        font-size: 2.5em;
+        text-shadow: 0px 2px 3px #2d2d2d;
+      }
+
+      h3 {
+        color: $light_blue;
+        font-size: $font-med;
+        text-shadow: 0px 2px 3px #2d2d2d;
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-juscont-space {
+    justify-content: space-between;
+  }
+
+  &-juscont-center {
+    justify-content: center;
+  }
+
+  &-al-items {
+    align-items: center;
+  }
+
+}
+
+.button {
+  padding: 8px 12px;
+  background: $light_blue;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+
+  &__shop {
+    font-size: $font-med;
+    color: $dark_gray;
+  }
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &__form {
+    color: $dark_gray;
+    background: $light_blue;
+    // background: linear-gradient(90deg, rgba(160,0,242,1) 0%, rgba(93,146,255,1) 50%, rgba(0,212,255,1) 100%);
+    // border-radius: 1.3em;
+    // box-shadow: 0 8px 16px 1px rgba(159,191,255,.4);
+  }
+
+  &__cart {
+    background:$dark_gray;
+    border-radius: 10px;
+    align-items:center;
+    justify-content:center;
+    i {
+      color: $white;
+    }
+  }
+
+  &__shopping {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $white;
+
+    &-btnBuy {
+        padding: 18px 50px;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 6px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+
+    &-btnClean {
+      margin: 20px 0 -15px 0;
+      font-weight: 100;
+      color: $white;
+      font-size: $font-peq;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.65;
+      }
+    }
+
+  }
+
+}
+
+.logo {
+  img {
+    margin-top: 120px;
+    width: 130px;
+    height: 120px;
+    &:hover {
+      transition: color 250ms ease-in-out;
+      filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(148deg) brightness(90%) contrast(68%);
+    }
+  }
+}
+
+.notification {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
+  background:$white_grayer;
+  color:$dark_gray;
+  font-size:$font-med;
+  font-weight:100;
+  width:400px;
+  position:fixed;
+  right:0px;
+  top:20px;
+  transform:translateX(450px);
+  transition: .2s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  box-shadow: 0px 0px 3px 1px rgb(0,0,0,.5);
+
+  &__pop {
+    transform:none;
+  }
+
+  img {
+    fill:$white;
+    width: 24px;
+    height: 24px;
+    margin-right:40px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>Todo perros - ADMIN edit</title>
+
+  <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="flex flex-juscont-space flex-al-items">
+
+      <!-- logo -->
+      <a href="/admin" class="header__logo"><img src="../images/jack.png"></a>
+
+      <!-- menu -->
+      <div class="header__menu">
+        <a href="#">Editar productos</a>
+        <a href="/admin_status">Estatus del envio</a>
+      </div>
+
+      <div class="header__menu">
+        <a href="/">Salir</a>
+      </div>
+    </nav>
+  </header>
+
+  <center>
+    <div class="shopping-products">
+      <div class="container container-f">
+        <form method="POST">
+          <span class="container-title">Productos</span>
+
+          <div class="input-ep">
+            <input type="text" placeholder="Nombre del producto" required="" id="v_product" name="v_product">
+            <i class="uil uil-box"></i>
+          </div>
+          <div class="input-ep">
+            <input type="text" placeholder="Precio del producto" required="" id="v_price" name="v_price">
+            <i class="uil uil-usd-circle"></i>
+          </div>
+          <div class="input-ep">
+            <input type="text" placeholder="URL de imagen" required="" id="v_image" name="v_image"/>
+            <i class="uil uil-import"></i>
+          </div>
+
+          <!-- ADD -->
+          <div class="input-ep">
+            <input type="submit" class="button button__form" value="Agregar" id="send_msg" formaction="/val/add" formmethod="POST" formenctypeenctype="multipart/form-data">
+          </div>
+
+          <!-- EDIT -->
+          <div class="input-ep">
+            <input type="submit" class="button button__form" value="Editar" id="send_msg">
+          </div>
+
+          <!-- DELETE -->
+          <div class="input-ep">
+            <input type="submit" class="button button__form" value="Eliminar" id="delete" formaction="/val/delete" formmethod="POST">
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </center>
+
+  <div class="notification" id="notification">
+    <img src="../images/info-circle.svg">
+    Proceso terminado
+  </div>
+
+</body>
+<script src="styles/notification.js"></script>
+</html>

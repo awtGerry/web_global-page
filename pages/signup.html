@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>ToDo perros - Registrate</title>
+
+  <link rel="stylesheet" href="styles/style.css"/>
+</head>
+<body>
+
+  <!-- Back home -->
+  <center>
+    <a href="/" class="logo"><img src="images/jack.png"></a>
+  </center>
+
+  <!-- Creacion del contenedor -->
+  <center>
+    <div class="container container-f">
+      <form action="/val/signup" method="POST" id="signup">
+        <span class="container-title">Crear cuenta</span>
+
+        <div class="input-ep">
+          <input type="text" placeholder="Introduzca su nombre de usuario" required id="uname" name="uname">
+          <i class="uil uil-user"></i>
+        </div>
+
+        <div class="input-ep">
+          <input type="email" placeholder="Introduzca su correo electrónico" required id="email" name="email">
+          <i class="uil uil-envelope-alt"></i>
+        </div>
+
+        <div class="input-ep">
+          <input type="password" placeholder="Introduzca su contraseña" required id="password" name="password">
+          <i class="uil uil-padlock"></i>
+        </div>
+
+        <!-- Boton para continuar -->
+        <div class="input-ep">
+          <input type="submit" class="button button__form" value="Crear cuenta" id="send_msg">
+        </div>
+      </form>
+
+      <!-- Ir a pagina de registro -->
+      <div class="to-signup">
+        <span class="to-signup-text">
+          ¿Ya tiene cuenta?
+          <a href="/login">Inicie sesion.</a>
+        </span>
+      </div>
+
+    </div> <!--container -->
+  </center>
+
+  <div class="notification" id="notification">
+    <img src="images/info-circle.svg">
+    Usuario creado, ya puede iniciar sesion!
+  </div>
+
+</body>
+<script src="styles/notification.js"></script>
+</html>

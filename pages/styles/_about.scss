@@ -1,0 +1,58 @@
+.about {
+  padding: 50px 20px;
+  align-items: center;
+
+  &__content {
+    text-align: center;
+    h2 {
+      color: $ocean_blue;
+    }
+  }
+
+}
+
+.contact {
+  border: none;
+  margin-bottom: 0;
+  padding: 30px 0px;
+  text-align: center;
+  h2 {
+    color: $ocean_blue;
+  }
+  &__map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__socials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__social{
+      float: left;
+      width: 25%;
+      list-style-type: none;
+      margin-top: -40px;
+      margin-bottom: 35px;
+
+      a {
+        font-size: 1.5em;
+        -webkit-transition: color .3s;
+        -moz-transition: color .3s;
+        transition: color .3s;
+      }
+      .facebook:hover{color:#4267B2;}
+      .twitter:hover{color:#00acee;}
+      .instagram:hover{color:#E1306C;}
+      .linkedin:hover{color:#0077B5;}
+    }
+  }
+
+  &__clear {
+    clear:both;
+  }
+
+}
