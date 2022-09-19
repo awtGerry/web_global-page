@@ -170,14 +170,13 @@ exports.showProducts = (req, res) => {
         <!-- log in & sign in -->
         <div class="header__log-sign">
           <a id="cart" class="button button__cart"><i class="uil uil-shopping-cart"></i></a>
-          <a href="/val/logout" class="button">Cerrar sesion</a>
         </div>
       </nav>
     </header>
     <div class="shopping shopping__display">
       <!-- CARRITO -->
       <div class="cart__container">
-        <form>
+          <form method="POST" enctypeenctype="multipart/form-data">
           <div class="shopping-cart">
             <div class="shopping-cart-header">
               <i class="uil uil-shopping-cart"></i>
@@ -196,7 +195,7 @@ exports.showProducts = (req, res) => {
             <!-- <a class="button">Pedir ahora</a> -->
             <div class="button__shopping">
                 <a class="emptyCart button__shopping-btnClean"> <i class="uil uil-trash-alt" alt=""></i> Vaciar carrito</a>
-                <input type="submit" class="button button__shopping-btnBuy" value="Comprar ahora" formaction="/buy" id="send_msg">
+                <input type="submit" class="button button__shopping-btnBuy" value="Comprar ahora" formaction="/buy">
             </div>
 
           </div> <!-- shopping-cart -->
@@ -220,3 +219,52 @@ exports.showProducts = (req, res) => {
 
   return htmlFile;
 }
+
+/* TODO: Movido a routes/buy por error en req.email :) */
+// exports.buy = async (req, res) => {
+//   const {
+//     productName,
+//     productPrice,
+//   } = req.body;
+//   let product = "";
+//   let total=0;
+//   for (var i=0; i<productName.length; i++) {
+//     total+=parseFloat(productPrice[i]);
+//     product+=`Nombre del producto: ${productName[i]}, Precio del producto: $ ${productPrice[i]}\n`;
+//   }
+//   let ticket = `Productos: ${product}\n\nTotal= $ ${total}`;
+
+//   var email = req.user.email
+//   let date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+
+//   var transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     post: 587,
+//     secure: false,
+//     auth: {
+//       user: 'kassandra.friesen@ethereal.email',
+//       pass: 'YQHdCADq2k6TXF8cDD'
+//     }
+//   });
+
+//   var mailOpt = {
+//     from: "todo_perros@web.com",
+//     to: email,
+//     subject: "Tu compra fue realizada con exito",
+//     text: ticket,
+//   }
+
+//   transporter.sendMail(mailOpt, (err, info) => {
+//     if (err) throw err;
+//     console.log('Email send');
+//     res.status(200).jsonp(req.body);
+//   });
+
+
+//   con.query(`
+//     INSERT INTO pedidos (nombre_producto, precio_producto, user_email, fecha) VALUE ('${productName}', ${total}, '${email}', '${date}')`,
+//           (err, results) => {
+//             if (err) throw err;
+//             res.redirect("/buy");
+//           })
+// } // buy

@@ -131,25 +131,15 @@ function displayCart() {
   for(var i in cartArray) {
     ul += '<li class="clearfix">'
       +'<img src="' + cartArray[i].image + '" id="productImg'+ i + '"/>'
-      +'<span class="item-name" id="productName' + i + '">' + cartArray[i].name + '</span>'
-      +'<span class="item-price" id="productPrice'+ i + '">$ ' + cartArray[i].price + '</span>'
+      +'<input type="hidden" name="productName" value="' + cartArray[i].name + '"/>'
+      +'<input type="hidden" name="productPrice" value="' + cartArray[i].price + '"/>'
+      +'<span class="item-name">' + cartArray[i].name + '</span>'
+      +'<span class="item-price"> $ ' + cartArray[i].price + '</span>'
       +'</li>'
   }
   $('.shopping-cart-items').html(ul);
   $('.total-cart').html(shoppingCart.getTotal());
   $('.total-count').html(shoppingCart.getContador());
-}
-
-function getBuy() {
-  let product = [];
-  var cartArray = shoppingCart.listCarrito();
-  for (var i in cartArray) {
-    let productName = document.getElementById(`productName${i}`).innerText;
-    let productPrice = document.getElementById(`productPrice${i}`).innerText;
-    product[i] = {productName, productPrice};
-  }
-  console.log(product);
-  return product;
 }
 
 displayCart();

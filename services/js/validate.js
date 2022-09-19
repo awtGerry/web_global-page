@@ -10,5 +10,6 @@ router.get('/logout', validate.logout);
 // products
 router.post('/delete', validate.delete);
 router.post('/add', validate.add);
+// router.post('/buy', validate.buy);
 
 module.exports = router;
