@@ -2,7 +2,8 @@
   position: relative;
   &__display {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 5px;
     // grid-gap: 40px;
 
     width: 90%;
@@ -47,7 +48,8 @@
 
   .cart__container {
     position: absolute;
-    margin-left: 425px;
+    z-index: 1000;
+    margin-left: 300px;
     margin-top: -40px;
     width: 80%;
     top: 0;
@@ -71,14 +73,14 @@
 
     .shopping-cart {
       display: none;
-      position: relative;
+      position: flex;
       top: 0;
       left: 0;
       margin-top: 50px;
       float: right;
       background: $dark_gray;
       color: $white;
-      width: 320px;
+      width: 250px;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 3px 6px #505050;
@@ -143,20 +145,6 @@
 
     } // shopping-cart
 
-    .shopping-cart:after {
-      bottom: 100%;
-      left: 89%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-bottom-color: $dark_gray;
-      border-width: 8px;
-      margin-left: -8px;
-    }
-
     .clearfix:after {
       content: "";
       display: table;
@@ -165,7 +153,6 @@
   } // cart-container
 } // shopping
 
-// by @MinzCode
 .cart-button {
   position: relative;
   padding: 10px;
@@ -255,21 +242,5 @@
   100% {
     top: 40%;
     left: 112%;
-  }
-}
-@keyframes txt1 {
-  0% {
-    opacity: 1;
-  }
-  20%, 100% {
-    opacity: 0;
-  }
-}
-@keyframes txt2 {
-  0%, 80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

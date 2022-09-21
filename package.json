@@ -1,7 +1,7 @@
 {
   "name": "web_global",
   "version": "1.0.0",
-  "description": "",
+  "description": "Usando mysql, con nodejs ~ base javascript base html & scss para crear la pagina **TODO PERROS**",
   "main": "app.js",
   "scripts": {
     "wStart": "nodemon services/app.js"

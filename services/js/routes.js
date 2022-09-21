@@ -94,12 +94,16 @@ router.get('/admin_edit', (req, res) => {
   res.sendFile("admin_edit.html", { root: './pages/admin_pages' })
 });
 
-router.get('/admin_status', (req, res) => {
-  con.query('SELECT * FROM pedidos', (err, results) => {
-    if (err) throw err;
-    res.send(results);
-  });
-  // res.sendFile("admin_status.html", { root: './pages/admin_pages' })
+router.get('/status', (req, res) => {
+  res.send(val.status());
 });
+
+// router.get('/admin_status', (req, res) => {
+//   con.query('SELECT * FROM pedidos', (err, results) => {
+//     if (err) throw err;
+//     res.send(results);
+//   });
+//   // res.sendFile("admin_status.html", { root: './pages/admin_pages' })
+// });
 
 module.exports = router;

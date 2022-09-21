@@ -23,7 +23,7 @@
       <!-- menu -->
       <div class="header__menu">
         <a href="#">Editar productos</a>
-        <a href="/admin_status">Estatus del envio</a>
+        <a href="/status">Estatus del envio</a>
       </div>
 
       <div class="header__menu">
@@ -39,16 +39,20 @@
           <span class="container-title">Productos</span>
 
           <div class="input-ep">
-            <input type="text" placeholder="Nombre del producto" required="" id="v_product" name="v_product">
+            <input type="text" placeholder="Nombre del producto" id="v_product" name="v_product">
             <i class="uil uil-box"></i>
           </div>
           <div class="input-ep">
-            <input type="text" placeholder="Precio del producto" required="" id="v_price" name="v_price">
+            <input type="text" placeholder="Precio del producto" id="v_price" name="v_price">
             <i class="uil uil-usd-circle"></i>
           </div>
           <div class="input-ep">
-            <input type="text" placeholder="URL de imagen" required="" id="v_image" name="v_image"/>
+            <input type="text" placeholder="URL de imagen" id="v_image" name="v_image"/>
             <i class="uil uil-import"></i>
+          </div>
+          <div class="input-ep">
+            <input type="text" placeholder="Para editar o eliminar necesito un ID" id="v_id" name="v_id">
+            <i class="uil uil-database"></i>
           </div>
 
           <!-- ADD -->
@@ -58,7 +62,7 @@
 
           <!-- EDIT -->
           <div class="input-ep">
-            <input type="submit" class="button button__form" value="Editar" id="send_msg">
+            <input type="submit" class="button button__form" value="Editar" id="send_msg" formaction="/val/edit" formmethod="POST" formenctypeenctype="multipart/form-data">
           </div>
 
           <!-- DELETE -->

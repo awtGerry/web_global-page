@@ -106,6 +106,23 @@ exports.add = (req, res) => {
   })
 }
 
+exports.edit = (req, res) => {
+  console.log(req.body);
+  const {
+    v_product,
+    v_price,
+    v_image,
+    v_id,
+  } = req.body
+
+  con.query(`UPDATE productos SET nombre = COALESCE(NULLIF('${v_product}', ''), nombre), precio = COALESCE(NULLIF('${v_price}', ''), precio), imagen = COALESCE(NULLIF('${v_image}', ''), imagen) WHERE id=${v_id}`,
+    (err, results) => {
+      if (err) throw err;
+      console.log(results);
+      res.redirect("/admin_edit");
+  })
+}
+
 exports.delete = (req, res) => {
   console.log(req.body);
   const { v_product, } = req.body;
@@ -114,6 +131,87 @@ exports.delete = (req, res) => {
       console.log(results);
       res.redirect("/admin_edit");
   })
+}
+
+exports.status = (req, res) => {
+  con.query('SELECT * FROM pedidos', (err, results) => {
+    if (err) throw err;
+    let v_id, v_product, v_total, v_email, v_date;
+    container = '';
+    for (var i=0; i<results.length; i++) {
+      v_id = results[i].id;
+      v_product = results[i].nombre_producto;
+      v_total = results[i].precio_producto;
+      v_email = results[i].user_email;
+      v_date = results[i].fecha
+      container += `
+        <tr>
+          <td>${v_id}</td>
+          <td>${v_product}</td>
+          <td>${v_total}</td>
+          <td>${v_email}</td>
+          <td>${v_date}</td>
+        </tr>
+      `
+      container += '\n';
+    }
+  })
+  let tableContent = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css"/>
+
+    <title>Todo perros - Productos</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex flex-juscont-space flex-al-items">
+
+        <!-- logo -->
+        <a href="#" class="header__logo"><img src="../images/jack.png"></a>
+
+        <!-- menu -->
+        <div class="header__menu">
+          <a href="/admin_edit">Editar productos</a>
+          <a href="/status">Estatus del envio</a>
+        </div>
+
+        <div class="header__menu">
+          <a href="/">Salir</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="tabla">
+      <div class="tabla__header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto(s)</th>
+              <th>Total</th>
+              <th>Email del usuario</th>
+              <th>Fecha del pedido</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tabla__content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            ${container}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="styles/js/shopping.js"></script>
+  <script src="styles/js/notification.js"></script>
+  </html>`
+  return tableContent;
 }
 
 /******* VISTA PRODUCTOS *******/
@@ -159,11 +257,11 @@ exports.showProducts = (req, res) => {
       <nav class="flex flex-juscont-space flex-al-items">
 
         <!-- logo -->
-        <a href="/user" class="header__logo"><img src="../../images/jack.png"></a>
+        <a href="/" class="header__logo"><img src="../../images/jack.png"></a>
 
         <!-- menu -->
         <div class="header__menu">
-          <a href="/user">Inicio</a>
+          <a href="/">Inicio</a>
           <a href="#">Productos</a>
         </div>
 
